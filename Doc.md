@@ -55,5 +55,18 @@ $$
 ## 2.3 初步思路：
 
 1. 时间序列特征
-2. 建立“区域画像”：对于时间序列预测任务，则通过区域画像对时间序列信息进行补充
+
+2. 建立“区域画像”：
+
+   * area embedding (100-dim)
+
+   * location: distance to CBD/traffic center/other area/etc. (30-dim)
+
+   * time-of-day, day-of-week, days-from-hot-day [decaying positional encoding ?] (5~8-dim)
+
+     *hot days: recognize from migration index, grid activity strength, etc.
+
+   * raw time-series (6~8-dim)
+
+   * grid-based features (~20-dim)
 
